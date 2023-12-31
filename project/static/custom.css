@@ -1,0 +1,11 @@
+.hero.is-primary{
+    background-color: #e238ff;
+}
+
+.hero.is-primary a.navbar-item:hover{
+    background-color: #e138ff8d;
+}
+
+.user-identifier {
+	font-weight: bold;
+}
