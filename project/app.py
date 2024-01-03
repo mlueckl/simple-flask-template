@@ -1,7 +1,6 @@
 from flask import Flask
 
-from project.blueprints.main import main as main_bp
-from project.blueprints.auth import auth as auth_bp
+from . import assets
 
 
 def create_app() -> Flask:
@@ -11,8 +10,7 @@ def create_app() -> Flask:
     app.config["DEBUG"] = True
 
     # Register blueprints
-    registered_blueprints = [main_bp, auth_bp]
-    for bp in registered_blueprints:
-        app.register_blueprint(bp)
+    with app.app_context():
+        assets.load_blueprints()
 
     return app
