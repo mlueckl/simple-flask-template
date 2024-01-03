@@ -3,6 +3,7 @@ from pathlib import Path
 from flask import current_app
 
 
+#  Blueprint name must be different from func names
 # TODO: Add option to filter unwanted bp's
 def load_blueprints() -> None:
     blueprints_path = Path().cwd().joinpath("project", "blueprints")
