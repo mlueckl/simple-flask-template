@@ -4,9 +4,9 @@ from sys import stderr
 from flask import current_app
 
 
-# Blueprint name must be different from func names
-# TODO: Add option to filter unwanted bp's
+# INFO: Blueprint name must be different from func name
 def load_blueprints() -> None:
+    """Loads all blueprints from blueprints/"""
     blueprints_path = Path().cwd().joinpath("project", "blueprints")
 
     for bp in blueprints_path.iterdir():

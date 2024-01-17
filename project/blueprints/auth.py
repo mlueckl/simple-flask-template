@@ -6,12 +6,22 @@ auth = Blueprint("auth", __name__, template_folder="../templates")
 
 
 @auth.route("/login")
-def login():
+def login() -> str:
+    """Login page
+
+    Returns:
+        str: Login html code
+    """
     return render_template("login.jinja")
 
 
 @auth.route("/login", methods=["POST"])
-def login_post():
+def login_post() -> str:
+    """Handles login process
+
+    Returns:
+        str: _description_
+    """
     email = request.form.get("email")
     password = request.form.get("password")
 
@@ -26,7 +36,8 @@ def login_post():
 
 
 @auth.before_app_request
-def set_user_name():
+def set_user_name() -> None:
+    """Set user in g"""
     email = session.get("email")
 
     if email is None:
@@ -37,6 +48,11 @@ def set_user_name():
 
 @auth.route("/logout")
 def logout():
+    """Logout process
+
+    Returns:
+        Response: Redirects user to index
+    """
     session.clear()
     flash("Successfully logged out!")
     return redirect(url_for("main.index"))

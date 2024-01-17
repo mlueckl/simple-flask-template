@@ -4,6 +4,11 @@ from . import assets
 
 
 def create_app() -> Flask:
+    """Create Flask app
+
+    Returns:
+        Flask: Flask app
+    """
     app = Flask(__name__)
 
     app.config["SECRET_KEY"] = __name__  # TODO: Set to something apt
