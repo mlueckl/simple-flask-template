@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 from project.app import create_app
 
-if __name__ == "__main__":
+
+def main() -> None:
     app = create_app()
     app.run()
+
+
+if __name__ == "__main__":
+    main()
