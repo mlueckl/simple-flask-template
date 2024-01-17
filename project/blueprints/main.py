@@ -4,5 +4,5 @@ main = Blueprint("main", __name__)
 
 
 @main.route("/")
-def index():
+def index() -> str:
     return render_template("index.jinja")

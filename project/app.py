@@ -7,7 +7,7 @@ def create_app() -> Flask:
     """Create Flask app
 
     Returns:
-        Flask: Flask app
+        Flask: App object with defined setup
     """
     app = Flask(__name__)
 
